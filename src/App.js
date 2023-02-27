@@ -1,24 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from 'react';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import Book from './components/Book';
+import Categories from './components/Categories';
+import NavBar from './components/NavBar';
 
 function App() {
+  const bookshop = [
+    {
+      id: 1,
+      title: 'The Lord of the Rings',
+      author: 'J. R. R.Tolkien',
+    },
+  ];
+  const [books, setBooks] = useState(bookshop);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <NavBar />
+      <Routes>
+        <Route exact path="/" element={<Book books={books} setBooks={setBooks} />} />
+        <Route exact path="/catagories" element={<Categories />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
