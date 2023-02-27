@@ -1,24 +1,38 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+import { useSelector, useDispatch } from 'react-redux';
 import Form from './Form';
+import { removeBook } from '../redux/books/booksSlice';
 
-function Book({ books }) {
-  const booklist = books.length ? (
+function Book() {
+  const bookstore = useSelector((state) => state.books.bookstore);
+  const dispatch = useDispatch();
+  const booklist = bookstore.length ? (
     <ul>
       {
-      books.map((book) => (
-        <li key={book.id}>
-          {book.title}
-          <p>
-            {book.author}
-          </p>
-          <button id={book.id} type="button">Remove</button>
-        </li>
-      ))
+        bookstore.map((book) => (
+          <li key={book.item_id}>
+            {book.title}
+            <p>
+              {book.author}
+            </p>
+            <p>
+              {book.category}
+            </p>
+            <p />
+            <button
+              id={book.item_id}
+              onClick={() => dispatch(removeBook(book.item_id))}
+              type="button"
+            >
+              Remove
+
+            </button>
+          </li>
+        ))
     }
     </ul>
   ) : (
-    <p>there is no book on the shelf</p>
+    <p>Shelf is empty</p>
   );
 
   return (
@@ -28,13 +42,5 @@ function Book({ books }) {
     </div>
   );
 }
-
-Book.propTypes = {
-  books: PropTypes.arrayOf(PropTypes.shape({
-    id: PropTypes.number.isRequired,
-    title: PropTypes.string.isRequired,
-    author: PropTypes.string.isRequired,
-  })).isRequired,
-};
 
 export default Book;
