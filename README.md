@@ -43,6 +43,8 @@
 - **Added logic**
 - **Added Navigation bar**
 - **Added Book page**
+- **Added reducer for adding book**
+- **Added reducer for removing book**
 - **Added categories page**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -88,6 +90,7 @@ Install this project with:
   cd my-project
   npm install -y
   npm install react-router-dom
+  npm install @reduxjs/toolkit react-redux
 ```
 
 ### Usage
