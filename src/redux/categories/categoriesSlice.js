@@ -1,7 +1,11 @@
 import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
-  categories: [],
+  categories: [
+    // { id: '1', category: 'Fiction' },
+    { id: '1', category: 'Nonfiction' },
+    { id: '2', category: 'Adventure' },
+  ],
 };
 export const categoriesSlice = createSlice({
   name: 'category',
@@ -9,11 +13,18 @@ export const categoriesSlice = createSlice({
   reducers: {
     checkTheStatus: (state) => {
       if (state.categories.length === 0) {
-        state.categories.push('Not developed yet');
+        return {
+          ...state,
+          categories: [...state.categories, 'Not developed yet'],
+        };
       }
+      return {
+        ...state,
+        categories: state.categories,
+      };
     },
-
-  },
+  }
+  ,
 
 });
 export const { checkTheStatus } = categoriesSlice.actions;
