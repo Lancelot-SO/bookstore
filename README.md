@@ -45,6 +45,7 @@
 - **Added Book page**
 - **Added reducer for adding book**
 - **Added reducer for removing book**
+- **Added redux in react component**
 - **Added categories page**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
