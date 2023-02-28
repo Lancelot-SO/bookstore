@@ -1,11 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
-  categories: [
-    { id: '1', category: 'Adventure' },
-    { id: '2', category: 'Action' },
-    { id: '3', category: 'Romance' },
-  ],
+  categories: [],
 };
 export const categoriesSlice = createSlice({
   name: 'category',

@@ -10,18 +10,14 @@ function Book() {
     <ul>
       {
         bookstore.map((book) => (
-          <li key={book.item_id}>
+          <li key={book.id}>
             {book.title}
             <p>
               {book.author}
             </p>
-            <p>
-              {book.category}
-            </p>
-            <p />
             <button
-              id={book.item_id}
-              onClick={() => dispatch(removeBook(book.item_id))}
+              id={book.id}
+              onClick={() => dispatch(removeBook(book.id))}
               type="button"
             >
               Remove

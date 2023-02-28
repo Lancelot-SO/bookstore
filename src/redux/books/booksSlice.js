@@ -1,24 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
-  bookstore: [{
-    item_id: 'item1',
-    title: 'In Search of Lost Time',
-    author: 'Marcel Proust',
-    category: 'Adventure',
-  },
-  {
-    item_id: 'item2',
-    title: 'Ulysses',
-    author: 'James Joyce',
-    category: 'Action',
-  },
-  {
-    item_id: 'item3',
-    title: 'Don Quixote',
-    author: 'Miguel de Cervantes',
-    category: 'Romance',
-  }],
+  bookstore: [],
 };
 
 export const booksSlice = createSlice({
