@@ -5,14 +5,14 @@ import Categories from './components/Categories';
 import NavBar from './components/NavBar';
 
 function App() {
-  const bookshop = [
+  const bookstore = [
     {
       id: 1,
       title: 'The Lord of the Rings',
       author: 'J. R. R.Tolkien',
     },
   ];
-  const [books, setBooks] = useState(bookshop);
+  const [books, setBooks] = useState(bookstore);
   return (
     <BrowserRouter>
       <NavBar />
