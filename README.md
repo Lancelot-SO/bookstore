@@ -45,6 +45,8 @@
 - **Added Book page**
 - **Added reducer for adding book**
 - **Added reducer for removing book**
+- **Added redux in react component**
+- **Added axios library with createAsyncThunk to make API calls**
 - **Added categories page**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
