@@ -1,134 +1,18 @@
-import React, { useEffect, useState } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
+import React from 'react';
+import { Divider } from 'primereact/divider';
 import Form from './Form';
-import { deleteBooks, fetchBooks } from '../redux/books/booksSlice';
+import BookPage from './BookPage';
 
 function Book() {
-  const bookstore = useSelector((state) => state.books.bookstore);
-  const status = useSelector((state) => state.books.status);
-  const categories = useSelector((state) => state.category.categories);
-  const [selected, setSelected] = useState();
-  const dispatch = useDispatch();
-  useEffect(() => {
-    if (status === 'idle') {
-      dispatch(fetchBooks());
-    }
-    if (status === 'succeeded') {
-      dispatch(fetchBooks());
-    }
-  }, [status, dispatch]);
-
-  const selectHandler = (e) => {
-    setSelected(e.target.value);
-  };
-  const booklist = bookstore.length ? (
-
-    <ul>
-      <label htmlFor="catagories">
-        Filterd by :catagories
-        {'  '}
-        <select
-          name="catagories"
-          defaultValue="All"
-          onInput={selectHandler}
-        >
-          <option defaultValue="All" value="All">All</option>
-          {
-
-              categories.map((category) => (
-                <option
-                  key={category.id}
-                  value={category.category}
-                >
-                  {category.category}
-
-                </option>
-              ))
-        }
-        </select>
-      </label>
-      {
-        bookstore.map((book) => {
-          if (book.category === selected) {
-            return (
-              <li key={book.id}>
-                {book.title}
-                <p>
-                  {book.author}
-                </p>
-                <p>
-                  {book.category}
-                </p>
-                <p />
-                <button
-                  id={book.id}
-                  onClick={() => dispatch(deleteBooks(book.id))}
-                  type="button"
-                >
-                  Remove
-
-                </button>
-              </li>
-            );
-          }
-
-          if (selected === 'All') {
-            return (
-              <li key={book.id}>
-                {book.title}
-                <p>
-                  {book.author}
-                </p>
-                <p>
-                  {book.category}
-                </p>
-                <p />
-                <button
-                  id={book.id}
-                  onClick={() => dispatch(deleteBooks(book.id))}
-                  type="button"
-                >
-                  Remove
-
-                </button>
-              </li>
-            );
-          }
-          if (selected === undefined) {
-            return (
-              <li key={book.id}>
-                {book.title}
-                <p>
-                  {book.author}
-                </p>
-                <p>
-                  {book.category}
-                </p>
-                <p />
-                <button
-                  id={book.id}
-                  onClick={() => dispatch(deleteBooks(book.id))}
-                  type="button"
-                >
-                  Remove
-
-                </button>
-              </li>
-            );
-          }
-
-          return false;
-        })
-    }
-    </ul>
-  ) : (
-    <p>Shelf is empty!</p>
-  );
-
   return (
-    <div>
-      {booklist}
-      <Form />
+    <div className="grid surface-200 pt-3">
+      <div className="card col-12">
+        <BookPage />
+      </div>
+      <Divider className="lg:ml-8 lg:mr-8 sm:ml-2 sm:mr-4 mb-0" layout="horizontal" />
+      <div className="card col-12">
+        <Form />
+      </div>
     </div>
   );
 }
