@@ -48,6 +48,7 @@
 - **Added redux in react component**
 - **Added axios library with createAsyncThunk to make API calls**
 - **Added categories page**
+- **Added styling**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
