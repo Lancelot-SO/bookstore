@@ -67,7 +67,7 @@ function Form() {
           <Dropdown
             value={category}
             onChange={(e) => setCategory(e.target.value)}
-            placeholder="Select Type"
+            placeholder="Category"
             className="lg:w-14rem md:w-14rem"
             options={categories}
             optionLabel="category"
