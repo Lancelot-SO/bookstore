@@ -1,7 +1,7 @@
 import React from 'react';
 import { NavLink, useNavigate } from 'react-router-dom';
 import { Menubar } from 'primereact/menubar';
-
+import './NavBar.css';
 import { Button } from 'primereact/button';
 
 function NavBar() {
@@ -13,14 +13,14 @@ function NavBar() {
       command: () => {
         navigator('/');
       },
-      className: 'text-1xl',
+      className: 'label',
     },
     {
       label: 'CATEGORIES',
       command: () => {
         navigator('/catagories');
       },
-      className: 'text-1xl ',
+      className: 'label',
     },
 
   ];
@@ -36,7 +36,7 @@ function NavBar() {
   const start = (
     <NavLink
       to="/"
-      className="text-3xl hidden text-blue-500 xl:block pr-4"
+      className="label-title"
       style={{
         textDecoration: 'none',
       }}

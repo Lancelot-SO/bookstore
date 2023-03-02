@@ -5,6 +5,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { Knob } from 'primereact/knob';
 import { Divider } from 'primereact/divider';
 import { fetchBooks, deleteBooks } from '../redux/books/booksSlice';
+import './BookPage.css';
 
 export default function BookPage() {
   const bookstore = useSelector((state) => state.books.bookstore);
@@ -21,35 +22,35 @@ export default function BookPage() {
   }, [status, dispatch]);
 
   const bookDisplay = (bookstore) => (
-    <card className="col-12 sm:col-12 lg:col-12 xl:col-12 p-2 surface-200">
-      <div className="p-4 border-2 surface-border surface-card border-round">
-        <div className="flex flex-column sm:flex-row align-items-center xl:align-items-start flex-1 gap-4">
-          <div className="flex flex-column w-5  align-items-center sm:align-items-start">
-            <div className="text-1xl text-600">{bookstore.category}</div>
-            <div className="text-2xl font-bold text-900 pb-2">{bookstore.title}</div>
-            <div className="text-1xl font-bold text-900 text-blue-400">{bookstore.author}</div>
-            <div className="flex align-items-center">
-              <span className="flex gap-0">
-                <Button label="Comments" className="text-blue-400 p-0 " text />
+    <card className="card">
+      <div className="card-box">
+        <div className="card-container">
+          <div className="card-container-box">
+            <div className="card-category">{bookstore.category}</div>
+            <div className="card-title">{bookstore.title}</div>
+            <div className="card-author">{bookstore.author}</div>
+            <div className="card-span">
+              <span className="card-span-first">
+                <Button label="Comments" className="card-button" text />
                 <Divider layout="vertical" />
-                <Button onClick={() => dispatch(deleteBooks(bookstore.id))} label="Remove" className="text-blue-400 p-0" text />
+                <Button onClick={() => dispatch(deleteBooks(bookstore.id))} label="Remove" className="card-button" text />
                 <Divider layout="vertical" className="h-1" />
-                <Button label="Edit" className="text-blue-400 p-0" text />
+                <Button label="Edit" className="card-button" text />
               </span>
             </div>
           </div>
-          <div className="flex sm:flex-column sm:gap-2 w-4 pt-3">
-            <div className="flex flex-1 md:flex-none flex gap-4">
+          <div className="card-circle">
+            <div className="card-circle-first">
               <Knob
                 showValue={false}
                 value={value}
                 onChange={() => setValue(value)}
                 strokeWidth={5}
                 valueColor="#3B82F6"
-                className="text-blue-400"
+                className="primary-color"
               />
-              <div className="flex flex-column flex justify-content-center">
-                <span className="text-4xl">
+              <div className="card-knob">
+                <span className="card-knob-span">
                   {value}
                   %
                 </span>
@@ -58,17 +59,17 @@ export default function BookPage() {
                 </span>
 
               </div>
-              <Divider className="lg:pr-8 hidden lg:block" s layout="vertical" />
+              <Divider s layout="vertical" />
             </div>
           </div>
-          <div className="flex sm:flex-column   sm:align-items-end sm:gap-2 pt-2">
-            <span className="text-1xl p-1 text-400 align-self-start">
+          <div className="card-chapter">
+            <span className="card-chapter-text">
               CURRENT CHAPTER
             </span>
-            <span className="text-1xl p-1  align-self-start ">
+            <span className="card-chapter-lesson">
               CHAPTER 17:A Lesson Learned
             </span>
-            <Button className="bg-blue-500 text-xs  align-self-start " size="sm" label="UPDATE PROGRESS" />
+            <Button className="card-update" size="sm" label="UPDATE PROGRESS" />
           </div>
         </div>
       </div>
@@ -80,7 +81,7 @@ export default function BookPage() {
       <DataView
         value={bookstore}
         itemTemplate={bookDisplay}
-        className="xl:pl-8 xl:pr-8 surface-200 "
+        className="card-surface"
       />
     </div>
   );

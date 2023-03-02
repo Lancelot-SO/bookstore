@@ -1,0 +1,8 @@
+.book-page {
+  display: grid;
+  padding-top: 0.75rem;
+}
+
+.book-page-divider {
+  margin-bottom: 0;
+}

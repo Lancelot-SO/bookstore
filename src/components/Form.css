@@ -1,0 +1,42 @@
+.add-new {
+  font-size: 2rem;
+  padding-bottom: 0.5rem;
+  padding-top: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 0%;
+  gap: 1rem;
+  align-items: flex-start;
+  margin-left: 5rem;
+  color: gray;
+}
+
+.form {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  flex-shrink: 0;
+  gap: 1rem;
+  margin-left: 5rem;
+}
+
+.form-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-input-icon {
+  width: 40rem;
+}
+
+.form-category {
+  width: 14rem;
+  height: 3rem;
+}
+
+.add-book {
+  background-color: #3b82f6;
+  font-size: 0.75rem;
+  align-self: flex-end;
+  height: 3rem;
+}

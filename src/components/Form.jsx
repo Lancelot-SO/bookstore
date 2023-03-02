@@ -5,6 +5,7 @@ import { InputText } from 'primereact/inputtext';
 import { Dropdown } from 'primereact/dropdown';
 import { Button } from 'primereact/button';
 import { postBooks } from '../redux/books/booksSlice';
+import './Form.css';
 
 function Form() {
   const [title, setTitle] = useState('');
@@ -35,13 +36,13 @@ function Form() {
     }
   };
   return (
-    <div className="col-12 sm:col-12 lg:col-12 xl:col-12 xl:pl-8 xl:pr-8 ">
-      <div className="flex text-2xl pb-2 pt-2 flex-column sm:flex-row align-items-center xl:align-items-start flex-1 gap-4">
+    <div className="main-container">
+      <div className="add-new">
         <div>ADD NEW BOOK</div>
       </div>
-      <form className="flex flex-column sm:flex-row align-items-center xl:align-items-start flex-none gap-4">
-        <div className="flex flex-column sm:flex-row xl:w-5">
-          <span className="p-input-icon-left w-12 md:w-12 sm:w-12">
+      <form className="form">
+        <div className="form-container">
+          <span className="p-input-icon-left form-input-icon">
             <i className="pi pi-book" />
             <InputText
               placeholder="Book title"
@@ -49,7 +50,7 @@ function Form() {
               type="text"
               value={title}
               onChange={(e) => setTitle(e.target.value)}
-              className="w-12 md:w-12 sm:w-12"
+              className="form-input-icon"
             />
           </span>
         </div>
@@ -68,13 +69,13 @@ function Form() {
             value={category}
             onChange={(e) => setCategory(e.target.value)}
             placeholder="Category"
-            className="lg:w-14rem md:w-14rem"
+            className="form-category"
             options={categories}
             optionLabel="category"
           />
           <Button
             onClick={addBookHandler}
-            className="bg-blue-500 text-xs  align-self-end "
+            className="add-book"
             label="ADD BOOK"
             size="lg"
           />

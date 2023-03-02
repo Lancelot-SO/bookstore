@@ -1,0 +1,121 @@
+.card {
+  width: 100%;
+}
+
+.card-box {
+  padding: 1rem;
+  border: 2px solid #ccc;
+  border-radius: 0.25rem;
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-bottom: 1rem;
+}
+
+.card-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  flex: 1 1 0%;
+  gap: 10rem;
+}
+
+.card-container-box {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  width: 5rem;
+}
+
+.card-category {
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.card-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #1a202c;
+  padding-bottom: 1rem;
+}
+
+.card-author {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #3b82f6;
+}
+
+.card-span {
+  display: flex;
+  align-items: center;
+}
+
+.card-span-first {
+  display: flex;
+  gap: 0;
+}
+
+.card-button {
+  padding: 0;
+  color: #3b82f6;
+}
+
+.primary-color {
+  color: #3b82f6;
+}
+
+.card-circle {
+  display: flex;
+  width: 30rem;
+  padding-top: 0.75rem;
+}
+
+.card-circle-first {
+  display: flex;
+  flex: 1 1 0%;
+  gap: 5rem;
+  margin-left: 10rem;
+}
+
+.card-knob {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.card-knob-span {
+  font-size: 2.25rem;
+}
+
+.card-chapter {
+  display: flex;
+  padding-top: 2rem;
+  flex-direction: column;
+}
+
+.card-chapter-text {
+  display: flex;
+  align-self: flex-start;
+  font-size: 1.125rem;
+  font-weight: 400;
+  color: gray;
+}
+
+.card-chapter-lesson {
+  display: flex;
+  align-self: flex-start;
+  font-size: 1.125rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+
+.card-update {
+  background-color: #3b82f6;
+  font-size: small;
+  align-self: self-start;
+  color: #fff;
+}
+
+.card-surface {
+  width: 82rem;
+  margin-left: 5rem;
+}
