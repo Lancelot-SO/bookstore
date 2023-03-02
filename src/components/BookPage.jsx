@@ -10,8 +10,6 @@ export default function BookPage() {
   const bookstore = useSelector((state) => state.books.bookstore);
   const status = useSelector((state) => state.books.status);
   const [value, setValue] = useState(Math.floor(Math.random() * 100));
-  // const categories = useSelector((state) => state.category.categories);
-  // const [selected, setSelected] = useState();
   const dispatch = useDispatch();
   useEffect(() => {
     if (status === 'idle') {
