@@ -41,7 +41,7 @@
 .card-author {
   font-size: 1.25rem;
   font-weight: 700;
-  color: #3b82f6;
+  color: #4386bf;
 }
 
 .card-span {
@@ -56,11 +56,11 @@
 
 .card-button {
   padding: 0;
-  color: #3b82f6;
+  color: #4386bf !important;
 }
 
 .primary-color {
-  color: #3b82f6;
+  color: #4386bf;
 }
 
 .card-circle {
@@ -109,7 +109,7 @@
 }
 
 .card-update {
-  background-color: #3b82f6;
+  background-color: #4386bf;
   font-size: small;
   align-self: self-start;
   color: #fff;
